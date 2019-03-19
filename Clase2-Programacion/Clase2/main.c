@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /*
-    //EJEMPLO CLASE 1
+
+    //          EJEMPLO CLASE 1
     int numero1;
     int numero2;
     int resultado;
@@ -23,7 +24,8 @@
 
 
     /*
-    //CADENAS DE CARACTERES
+
+    //          CADENAS DE CARACTERES
     char character;
     char palabra[16];
 
@@ -38,14 +40,66 @@
     printf("Usted ingreso: %s", palabra);
 
     */
-int main()
-{
+
+    /*
+
+    //          FOR
+
     int i;
 
     for(i=0;i<10;i++)
     {
         printf("%d-",i+1);
     }
+
+    */
+int main()
+{
+    int numero;
+    int contadorNumeros=0;
+    int max;
+    int min;
+    int menorPositivos;
+    int mayorNegativos;
+    int acumuladorNegativos=0;
+    int promedioNegativos;
+    int contadorPares=0;
+    int acumuladorPositivos=0;
+    char seguir;
+
+    do{
+        printf("Ingrese un numero: ");
+        scanf("%d",&numero);
+
+        //VALIDACION 0
+
+        while(numero==0)
+        {
+            printf("\nERROR. Ingrese un numero valido :");
+            scanf("%d",&numero);
+
+        }
+
+        //PARES
+
+        if(numero%2==0)
+        {
+            contadorPares++;
+        }
+
+        //CONTADOR
+
+        contadorNumeros++;
+
+        //SEGUIR
+
+        printf("\nDesea continuar? (s/n): ");
+        fflush(stdin);
+        scanf("%c",&seguir);
+
+    }while(seguir=='s');
+
+
 
 
     return 0;
