@@ -50,16 +50,38 @@ int aprobarMateria(int notaMinima ,int nota)
 
 void ejercicioUno(void)
 {
+    int nota;
+    int notaMinima=6;
     int contador=0;
     int contadorAprobados=0;
     float promedioAprobados;
     float promedioDesaprobados;
     int acumuladorAprobados=0;
     int acumuladorDesaprobados=0;
+    int contadorDesaprobados=0;
 
     do{
 
+        nota=pedirNota();
+        if(aprobarMateria(notaMinima,nota)==1)
+        {
+            contadorAprobados++;
+            acumuladorAprobados=acumuladorAprobados+nota;
+        }
+        else
+        {
+            contadorDesaprobados++;
+            acumuladorDesaprobados=acumuladorDesaprobados+nota;
+        }
 
+        contador++;
     }while(contador<5);
+
+    promedioAprobados=sacarPromedio(acumuladorAprobados,contadorAprobados);
+    promedioDesaprobados=sacarPromedio(acumuladorDesaprobados,contadorDesaprobados);
+
+    printf("La cantidad de aprobados es: %d", contadorAprobados);
+    printf("\nPromedio de notas de aprobados es: %.2f", promedioAprobados);
+    printf("\nPromedio de notas de desaprobados es: %.2f", promedioDesaprobados);
 
 }
