@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1553603687 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 4\bibliotecas\ingresos.c
+	"Ingresos.h"
+
+1553605204 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 4\bibliotecas\ingresos.h
+
+1553607128 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 4\bibliotecas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Ingresos.h"
+	"Recursividad.h"
+
+1553606305 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 4\bibliotecas\recursividad.c
+	"Recursividad.h"
+
+1553606305 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 4\bibliotecas\recursividad.h
+
