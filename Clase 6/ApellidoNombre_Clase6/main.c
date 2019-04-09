@@ -1,102 +1,59 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define T 25
 #include <string.h>
+#include <ctype.h>
 
-//char apellidoNombreAcomodados(char[], char[],int);
+void pedirCadena(char[],char[],int);
 
 int main()
 {
-    char apellido[T];
-    char nombre[T];
-    char apellidoNombre[50];
-    int len;
-    int i;
+    int i=0;
+    char apellido[20];
+    char nombre[20];
+    char apellidoNombre[50]="";
 
-    //NOMBRE
-    printf("Ingrese su nombre: ");
-    fgets(nombre,T,stdin);
-    len=strlen(nombre);
-    nombre[len-1]='\0';
+    char auxCadena[100];
 
-    //APELLIDO
-    printf("Ingrese su apellido: ");
-    fgets(apellido,T,stdin);
-    len=strlen(nombre);
-    apellido[len-1]='\0';
+    pedirValidarCadena("nombre: ",nombre,20);
+    pedirValidarCadena("apellido: ",apellido,20);
 
-    //NOMBRE
-    for(i=0;i<T;i++)
-    {
-        if(i==0 || strcmp(nombre[i],' ')==0)
-        {
-            strupr(nombre[i]);
-        }
-        else
-        {
-            strlwr(nombre[i]);
-        }
-    }
-
-    //APELLIDO
-    for(i=0;i<T;i++)
-    {
-        if(i==0 || strcmp(nombre[i],' ')==0)
-        {
-            strupr(apellido[i]);
-        }
-        else
-        {
-            strlwr(apellido[i]);
-        }
-    }
-
-    //CONCATENACION
     strcat(apellidoNombre,apellido);
     strcat(apellidoNombre,", ");
     strcat(apellidoNombre,nombre);
 
+    strlwr(apellidoNombre);
+    apellidoNombre[0]=toupper(apellidoNombre[0]);
 
-    return 0;
+    while(apellidoNombre[i]!='\0')
+    {
+        if(apellidoNombre[i]==0  || apellidoNombre[i-1]==' ')
+        {
+            apellidoNombre[i]=toupper(apellidoNombre[i]);
+        }
+        i++;
+    }
+
+    puts(apellidoNombre);
 }
 
-/*
-char apellidoNombreAcomodados(char nombre[], char apellido[],int tam)
+
+void pedirValidarCadena(char mensaje[],char cadena[],int tam)
 {
-    int i;
-    char apellidoNombre[100];
+    int i=0;
 
-    //NOMBRE
-    for(i=0;i<tam;i++)
+    char ingrese[10]="Ingrese ";
+    strcat(ingrese,mensaje);
+    printf(ingrese);
+
+    fflush(stdin);
+
+    scanf("%[^\n]",cadena);
+
+    while(strlen(cadena)>tam)
     {
-        if(i=0 || (nombre[i-1])=='\n')
-        {
-             strupr(nombre[i]);
-        }
-        else
-        {
-            strlwr(nombre[i]);
-        }
+        printf(ingrese);
+        scanf("%[^\n]",cadena);
     }
 
-    //APELLIDO
-    for(i=0;i<tam;i++)
-    {
-        if(i=0 || (apellido[i-1])=='\n')
-        {
-            strupr(apellido[i]);
-        }
-        else
-        {
-            strlwr(apellido[i]);
-        }
-    }
 
-    //CONCATENACION
-    strcat(apellidoNombre,apellido);
-    strcat(apellidoNombre,", ");
-    strcat(apellidoNombre,nombre);
-
-    return apellidoNombre;
 }
-*/
