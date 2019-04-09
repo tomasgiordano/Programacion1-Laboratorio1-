@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554770358 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\clase 6\apellidonombre_clase6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
