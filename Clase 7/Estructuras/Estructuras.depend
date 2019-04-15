@@ -1,5 +1,13 @@
 # depslib dependency file v1.0
-1554823471 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 7\estructuras\main.c
+1555340650 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 7\estructuras\main.c
 	<stdio.h>
 	<stdlib.h>
+	"funcionesEmpleados.h"
+
+1555338460 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 7\estructuras\funcionesempleados.c
+	"funcionesEmpleados.h"
+	<stdio.h>
+	<stdlib.h>
+
+1555341013 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 7\estructuras\funcionesempleados.h
 
