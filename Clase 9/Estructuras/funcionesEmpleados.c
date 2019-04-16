@@ -67,6 +67,7 @@ void mostrarTodos(eEmpleado empleado[],int tam)
     {
         mostrarEmpleado(empleado,i);
     }
+    system("pause");
 }
 
 int buscarLibre(eEmpleado empleado[],int tam)
@@ -111,6 +112,7 @@ void darBaja(eEmpleado empleado[], int tam)
 {
     int legajoBaja;
     int posicionLegajo;
+    char pregunta;
 
     printf("Ingrese el legajo del empleado que quiere dar de baja: ");
     fflush(stdin);
@@ -121,13 +123,22 @@ void darBaja(eEmpleado empleado[], int tam)
 
     if(posicionLegajo!=-1)
     {
-        printf("Empleado encontrado y dado de baja con exito!\n");
-        empleado[posicionLegajo].estado=LIBRE;
+        printf("Esta seguro que quiere dar de baja al empleado | %s | con legajo | %d | ?\n\tSi(s) o No(n):\t",empleado[posicionLegajo].nombre,empleado[posicionLegajo].legajo);
+        scanf("%s",&pregunta);
+        fflush(stdin);
+
+        if(pregunta=='s')
+        {
+            printf("Empleado | %s | encontrado y dado de baja con exito!\n",empleado[posicionLegajo].nombre);
+            empleado[posicionLegajo].estado=LIBRE;
+        }
+
     }
     else
     {
         printf("No se ha encontrado ningun empleado con ese legajo.\n");
     }
+    system("pause");
 }
 
 //void modificarSueldo(eEmpleado[],int)
@@ -160,14 +171,12 @@ void mostrarMenu()
             break;
             case 2:
                 mostrarTodos(empleado,T);
-                system("pause");
             break;
             case 3:
 
             break;
             case 4:
                 darBaja(empleado,T);
-                system("pause");
             break;
             case 5:
                 seguir='n';
