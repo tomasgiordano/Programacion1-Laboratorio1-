@@ -18,3 +18,15 @@
 
 1555374385 c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\funcionesempleados.h
 
+1555423866 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesEmpleados.h"
+
+1555427620 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\funcionesempleados.h
+
+1555427940 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\funcionesempleados.c
+	"funcionesEmpleados.h"
+	<stdio.h>
+	<stdlib.h>
+

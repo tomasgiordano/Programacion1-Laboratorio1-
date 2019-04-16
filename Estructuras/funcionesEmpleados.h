@@ -13,6 +13,8 @@ void mostrarEmpleado(eEmpleado[],int);
 void mostrarTodos(eEmpleado[],int);
 void crearEmpleado(eEmpleado[],int);
 void darBaja(eEmpleado[],int);
-int buscarLibre(eEmpleado[],int)
+int buscarLibre(eEmpleado[],int);
 void mostrarMenu(void);
-
+void inicializarEmpleados(eEmpleado[],int);
+void modificarSueldo(eEmpleado[],int);
+int buscarLegajo(eEmpleado[],int,int);
