@@ -6,7 +6,11 @@
 void crearEmpleado(eEmpleado empleado[], int tam)
 {
     int i;
-    for(i=0;i<tam;i++)
+    int posicionLibre;
+
+    posicionLibre=buscarLibre(empleado,tam);
+
+    if(posicionLibre!=-1)
     {
         printf("Ingrese legajo: ");
         scanf("%d",&empleado[i].legajo);
@@ -21,9 +25,15 @@ void crearEmpleado(eEmpleado empleado[], int tam)
 
         printf("Ingrese sueldo bruto: ");
         scanf("%f",&empleado[i].sueldoBruto);
-
         empleado[i].sueldoNeto=empleado[i].sueldoBruto*0.85;
+
+        printf("Empleado creado exitosamente!");
     }
+    else
+    {
+        printf("Espacio ocupado, lista de empleados completa.");
+    }
+    system("pause");
 }
 
 void mostrarEmpleado(eEmpleado empleado[],int posicion)
@@ -40,10 +50,26 @@ void mostrarTodos(eEmpleado empleado[],int tam)
     }
 }
 
-//void buscarLibre(eEmpleado[],int tam)
-//{
+int buscarLibre(eEmpleado empleado[],int tam)
+{
+    int i;
+    int posicion;
 
-//}
+    for(i=0;i<tam;i++)
+    {
+        if(empleado.estado==0)
+        {
+            posicion=i;
+            break;
+        }
+        else
+        {
+            posicion=-1;
+        }
+    }
+
+    return posicion;
+}
 
 void mostrarMenu()
 {

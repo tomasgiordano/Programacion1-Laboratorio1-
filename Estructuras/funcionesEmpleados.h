@@ -5,6 +5,7 @@ typedef struct
     char sexo;
     float sueldoBruto;
     float sueldoNeto;
+    int estado; // 1 OCUPADO // 0 LIBRE
 
 } eEmpleado;
 
@@ -12,6 +13,6 @@ void mostrarEmpleado(eEmpleado[],int);
 void mostrarTodos(eEmpleado[],int);
 void crearEmpleado(eEmpleado[],int);
 void darBaja(eEmpleado[],int);
-//void buscarLibre(eEmpleado[],int)
+int buscarLibre(eEmpleado[],int)
 void mostrarMenu(void);
 
