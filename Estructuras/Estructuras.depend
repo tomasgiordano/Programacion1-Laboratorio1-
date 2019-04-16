@@ -11,12 +11,12 @@
 
 1555341013 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 7\estructuras\funcionesempleados.h
 
-1555371823 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\main.c
+1555443426 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcionesEmpleados.h"
 
-1555374385 c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\funcionesempleados.h
+1555445303 c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\funcionesempleados.h
 
 1555423866 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\main.c
 	<stdio.h>
@@ -26,6 +26,11 @@
 1555427620 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\funcionesempleados.h
 
 1555427940 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\estructuras\funcionesempleados.c
+	"funcionesEmpleados.h"
+	<stdio.h>
+	<stdlib.h>
+
+1555445322 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\estructuras\funcionesempleados.c
 	"funcionesEmpleados.h"
 	<stdio.h>
 	<stdlib.h>

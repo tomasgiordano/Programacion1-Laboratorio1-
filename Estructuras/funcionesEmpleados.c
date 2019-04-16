@@ -5,6 +5,15 @@
 #define LIBRE 0
 #define OCUPADO 1
 
+void inicializarEmpleados(eEmpleado empleado[],int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        empleado[i].estado=LIBRE;
+    }
+}
+
 void crearEmpleado(eEmpleado empleado[], int tam)
 {
     int posicionLibre;
@@ -42,7 +51,7 @@ void crearEmpleado(eEmpleado empleado[], int tam)
 void mostrarEmpleado(eEmpleado empleado[],int posicion)
 {
     int i;
-    for(i=0;i<posicion;i++)
+    for(i=0;i<T;i++)
     {
         if(empleado[i].estado!=LIBRE)
         {
@@ -81,50 +90,44 @@ int buscarLibre(eEmpleado empleado[],int tam)
     return posicion;
 }
 
-void inicializarEmpleados(eEmpleado empleado[],int tam)
-{
-    int i;
-    for(i=0;i<tam;i++)
-    {
-        empleado[i].estado=LIBRE;
-    }
-}
-
-void darBaja(eEmpleado empleado[], int tam)
-{
-    int legajoBaja;
-    int busqueda;
-
-    printf("Ingrese el legajo del empleado que quiere dar de baja: ");
-    scanf("%d",&legajoBaja);
-
-    busqueda=buscarLegajo(empleado,T,legajoBaja);
-
-    if(busqueda==0)
-    {
-        printf("No se ha encontrado ningun empleado con ese legajo.\n");
-    }
-    else
-    {
-        printf("Empleado encontrado y dado de baja con exito!\n");
-        empleado[legajoBaja].estado=LIBRE;
-    }
-}
 
 int buscarLegajo(eEmpleado empleado[],int tam, int legajo)
 {
     int i;
-    int busqueda=0;
+    int busquedaLegajo=-1;
 
     for(i=0;i<tam;i++)
     {
         if(empleado[i].legajo==legajo)
         {
-            busqueda=1;
+            busquedaLegajo=i;
             break;
         }
     }
-    return busqueda;
+    return busquedaLegajo;
+}
+
+void darBaja(eEmpleado empleado[], int tam)
+{
+    int legajoBaja;
+    int posicionLegajo;
+
+    printf("Ingrese el legajo del empleado que quiere dar de baja: ");
+    fflush(stdin);
+    scanf("%d",&legajoBaja);
+
+
+    posicionLegajo=buscarLegajo(empleado,T,legajoBaja);
+
+    if(posicionLegajo!=-1)
+    {
+        printf("Empleado encontrado y dado de baja con exito!\n");
+        empleado[posicionLegajo].estado=LIBRE;
+    }
+    else
+    {
+        printf("No se ha encontrado ningun empleado con ese legajo.\n");
+    }
 }
 
 //void modificarSueldo(eEmpleado[],int)
