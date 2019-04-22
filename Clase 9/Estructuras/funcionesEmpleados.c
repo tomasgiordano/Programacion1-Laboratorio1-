@@ -72,14 +72,13 @@ void crearEmpleado(eEmpleado empleado[], int tam)
 
 void mostrarEmpleado(eEmpleado empleado[],int posicion)
 {
-    int i;
-    for(i=0;i<T;i++)
-    {
-        if(empleado[i].estado!=LIBRE)
+    int posi;
+
+        if(empleado[posicion].estado!=LIBRE)
         {
             printf("%d-%s-%c-%.2f\n",empleado[posicion].legajo,empleado[posicion].nombre,empleado[posicion].sexo,empleado[posicion].sueldoNeto);
         }
-    }
+
 }
 
 void mostrarTodos(eEmpleado empleado[],int tam)
@@ -238,13 +237,14 @@ void imprimirCarlos(eEmpleado empleado[],int tam)
 {
     int cantidadCarlos;
     cantidadCarlos=buscarCantidadCarlos(empleado,tam);
-    printf("La cantidad de empleados llamados Carlos es: %d",cantidadCarlos);
+    printf("La cantidad de empleados llamados Carlos es: %d\n",cantidadCarlos);
 }
 
 void informar(eEmpleado empleado[],int tam)
 {
     buscarMaximosSueldos(empleado,tam);
     imprimirCarlos(empleado,tam);
+    system("pause");
 }
 
 void mostrarMenu()
@@ -253,7 +253,7 @@ void mostrarMenu()
     char seguir='s';
     eEmpleado empleado[T];
     inicializarEmpleados(empleado,T);
-    hardcodearDatosEmpleados(empleado,T);
+    hardcodearDatosEmpleados(empleado,6);
 
     do
     {
