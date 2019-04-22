@@ -1,7 +1,8 @@
 #include "funcionesEmpleados.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define T 1
+#include <string.h>
+#define T 6
 #define LIBRE 0
 #define OCUPADO 1
 
@@ -11,6 +12,27 @@ void inicializarEmpleados(eEmpleado empleado[],int tam)
     for(i=0;i<tam;i++)
     {
         empleado[i].estado=LIBRE;
+    }
+
+}
+
+void hardcodearDatosEmpleados(eEmpleado empleado[], int tam)
+{
+    int i;
+    int legajos[]={1,8,9,7,2,4};
+    char nombres[][50]={"Carlos","Maria","Carlos","Pedro","Carlos","Mateo"};
+    char sexo[]={'M','F','M','M','M','M'};
+    float sueldosBruto[]={22000,22000,15000,4000,21000,6000};
+
+    for(i=0; i<tam; i++)
+    {
+        empleado[i].legajo = legajos[i];
+        strcpy(empleado[i].nombre, nombres[i]);
+        empleado[i].sexo = sexo[i];
+        empleado[i].sueldoBruto = sueldosBruto[i];
+        empleado[i].sueldoNeto = sueldosBruto[i] * 0.85;
+        empleado[i].estado = OCUPADO;
+
     }
 }
 
@@ -141,10 +163,89 @@ void darBaja(eEmpleado empleado[], int tam)
     system("pause");
 }
 
-//void modificarSueldo(eEmpleado[],int)
-//{
+void modificarSueldo(eEmpleado empleado[],int tam)
+{
+    int legajo;
+    int busqueda;
 
-//}
+    printf("Ingrese el legajo del empleado cuyo sueldo quiere modificar: ");
+    scanf("%d",&legajo);
+
+    busqueda=buscarLegajo(empleado,tam,legajo);
+
+
+    if(busqueda!=-1)
+    {
+        printf("Ingrese el nuevo sueldo de | %s |: ",empleado[busqueda].nombre);
+        scanf("%f",&empleado[busqueda].sueldoBruto);
+        empleado[busqueda].sueldoNeto=empleado[busqueda].sueldoBruto*0.85;
+        printf("Sueldo modificado exitosamente!\n");
+    }
+    else
+    {
+        printf("No se ha encontrado el legajo en la lista.\n");
+    }
+    system("pause");
+}
+
+float buscarMaximosSueldos(eEmpleado empleado[],int tam)
+{
+    float max=-1;
+    int i;
+
+    for(i=0;i<tam;i++)
+    {
+        if(empleado[i].sueldoNeto<=max)
+        {
+            max=empleado[i].sueldoNeto;
+        }
+    }
+    return max;
+}
+
+void mostrarMaximosSueldos(eEmpleado empleado[],int tam)
+{
+    float maxSueldoNeto;
+    int i;
+
+    maxSueldoNeto=buscarMaximosSueldos(empleado,tam);
+
+    printf("Empleados con el mayor sueldo:\n");
+    for(i=0;i<tam;i++)
+    {
+        if(empleado[i].sueldoNeto==maxSueldoNeto)
+        {
+            mostrarEmpleado(empleado,i);
+        }
+    }
+}
+
+int buscarCantidadCarlos(eEmpleado empleado[],int tam)
+{
+    int i;
+    int cantidadCarlos=0;
+    for(i=0;i<tam;i++)
+    {
+        if(stricmp(empleado[i].nombre,"carlos")==0)
+        {
+            cantidadCarlos++;
+        }
+    }
+    return cantidadCarlos;
+}
+
+void imprimirCarlos(eEmpleado empleado[],int tam)
+{
+    int cantidadCarlos;
+    cantidadCarlos=buscarCantidadCarlos(empleado,tam);
+    printf("La cantidad de empleados llamados Carlos es: %d",cantidadCarlos);
+}
+
+void informar(eEmpleado empleado[],int tam)
+{
+    buscarMaximosSueldos(empleado,tam);
+    imprimirCarlos(empleado,tam);
+}
 
 void mostrarMenu()
 {
@@ -152,6 +253,7 @@ void mostrarMenu()
     char seguir='s';
     eEmpleado empleado[T];
     inicializarEmpleados(empleado,T);
+    hardcodearDatosEmpleados(empleado,T);
 
     do
     {
@@ -159,7 +261,8 @@ void mostrarMenu()
         printf("2. Mostrar Empleados.\n");
         printf("3. Modificar sueldo por legajo.\n");
         printf("4. Dar de baja por legajo.\n");
-        printf("5. Salir.\n");
+        printf("5. Informar.\n");
+        printf("6. Salir.\n");
         printf("Ingrese una opcion: ");
 
         scanf("%d",&opcion);
@@ -173,12 +276,15 @@ void mostrarMenu()
                 mostrarTodos(empleado,T);
             break;
             case 3:
-
+                modificarSueldo(empleado,T);
             break;
             case 4:
                 darBaja(empleado,T);
             break;
             case 5:
+                informar(empleado,T);
+            break;
+            case 6:
                 seguir='n';
             break;
             default:
