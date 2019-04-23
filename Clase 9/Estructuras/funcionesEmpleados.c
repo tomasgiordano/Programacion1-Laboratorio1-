@@ -22,19 +22,19 @@ void hardcodearDatosEmpleados(eEmpleado empleado[], int tam)
     int legajos[]={1,8,9,7,2,4};
     char nombres[][50]={"Carlos","Maria","Carlos","Pedro","Carlos","Mateo"};
     char sexo[]={'M','F','M','M','M','M'};
-    float sueldosBruto[]={22000,22000,15000,4000,21000,6000};
+    int cantidadHoras[]={22,22,15,40,21,60};
 
     for(i=0; i<tam; i++)
     {
         empleado[i].legajo = legajos[i];
         strcpy(empleado[i].nombre, nombres[i]);
         empleado[i].sexo = sexo[i];
-        empleado[i].sueldoBruto = sueldosBruto[i];
-        empleado[i].sueldoNeto = sueldosBruto[i] * 0.85;
+        empleado[i].cantidadHoras = cantidadHoras[i];
         empleado[i].estado = OCUPADO;
-
     }
 }
+
+
 
 void crearEmpleado(eEmpleado empleado[], int tam)
 {
@@ -237,7 +237,7 @@ void imprimirCarlos(eEmpleado empleado[],int tam)
 {
     int cantidadCarlos;
     cantidadCarlos=buscarCantidadCarlos(empleado,tam);
-    printf("La cantidad de empleados llamados Carlos es: %d\n",cantidadCarlos);
+    printf("La cantidad de empleados llamados Carlos que ganan mas de 20.000 es: %d\n",cantidadCarlos);
 }
 
 void informar(eEmpleado empleado[],int tam)
@@ -245,6 +245,12 @@ void informar(eEmpleado empleado[],int tam)
     buscarMaximosSueldos(empleado,tam);
     imprimirCarlos(empleado,tam);
     system("pause");
+}
+
+void inicializarSectores(void)
+{
+    sectores sector;
+
 }
 
 void mostrarMenu()

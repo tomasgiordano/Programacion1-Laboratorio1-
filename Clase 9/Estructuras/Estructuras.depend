@@ -35,15 +35,15 @@
 	<stdio.h>
 	<stdlib.h>
 
-1555938330 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\funcionesempleados.c
+1556024400 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\funcionesempleados.c
 	"funcionesEmpleados.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1555937830 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\funcionesempleados.h
+1556025225 c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\funcionesempleados.h
 
-1555933630 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\main.c
+1556024400 source:c:\users\alumno\desktop\tomas giordano\programacion1-laboratorio1-\clase 9\estructuras\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcionesEmpleados.h"
