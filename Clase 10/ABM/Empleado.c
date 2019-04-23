@@ -85,7 +85,7 @@ void mostrarEmpleado(eEmpleado unEmpleado, eSector sectores[], int ts)
         }
     }
 
-    printf("%4d %10s %c %4f %4f   %s\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto,descripcionSector);
+    printf("%4d %10s %c %.2f %.2f.....................%s\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto,descripcionSector);
 
 }
 

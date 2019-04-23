@@ -5,7 +5,6 @@
 #define T 10
 #define S 4
 
-
 int menuDeOpciones(char[]);
 
 /*
@@ -29,7 +28,7 @@ int main()
 
     do
     {
-        opcion = menuDeOpciones("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar |1|\n10.Salir\nElija una opcion: ");
+        opcion = menuDeOpciones("1.Crear un empleado.\n2.Dar de baja por legajo.\n3.Modificar por legajo.\n4.Mostrar empleados.\n5.Informar |1|\n10.Salir.\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
@@ -56,8 +55,6 @@ int main()
         }
         system("cls");
     }while(opcion!=10);
-
-    //inicializarEmpleados(lista, T);
 
     return 0;
 }
