@@ -1,4 +1,5 @@
-
+#include <string.h>
+#include <stdlib.h>
 #include "Empleado.h"
 
 
@@ -12,6 +13,7 @@ void cargarEmpleado(eEmpleado lista[],int tamEmpleado,eSector sectores[],int can
     i = buscarLibre(lista, tamEmpleado);
     if(i!=-1)
     {
+        printf("\n---CREACION DE EMPLEADO---\n\n");
         printf("Ingrese legajo: ");
         scanf("%d", &lista[i].legajo);
 
@@ -50,7 +52,7 @@ void cargarEmpleado(eEmpleado lista[],int tamEmpleado,eSector sectores[],int can
     }
     else
     {
-        printf("No hay espacio.");
+        printf("ERROR. No hay espacio para otro empleado en la lista.");
     }
 
 
@@ -60,6 +62,7 @@ void cargarEmpleado(eEmpleado lista[],int tamEmpleado,eSector sectores[],int can
 void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int ts)
 {
     int i;
+    printf("\n---LISTA COMPLETA DE EMPLEADOS---\n\n");
     for(i=0; i<tam; i++)
     {
         if(lista[i].estado!=LIBRE)
@@ -141,6 +144,7 @@ void modificar(eEmpleado lista[], int tam, int legajo)
 
     int i;
     int loEncontro = 0;
+    printf("\n---MODIFICACION DE SUELDO DE EMPLEADO---\n\n");
     printf("Ingrese legajo: ");
     scanf("%d", &legajo);
 
@@ -157,10 +161,12 @@ void modificar(eEmpleado lista[], int tam, int legajo)
             break;//modifcar
         }
     }
+
     if(loEncontro==0)
     {
-        printf("El dato no existe");
+        printf("ERROR. El legajo ingresado no le pertenece a ningun empleado.");
     }
+
 }
 
 void borrarEmpleado(eEmpleado lista[], int tam, int legajo)
@@ -168,6 +174,7 @@ void borrarEmpleado(eEmpleado lista[], int tam, int legajo)
 
     int i;
     int loEncontro = 0;
+    printf("\n---ELIMINACION DE EMPLEADOS---\n\n");
     printf("Ingrese legajo: ");
     scanf("%d", &legajo);
 
@@ -184,7 +191,7 @@ void borrarEmpleado(eEmpleado lista[], int tam, int legajo)
 
     if(loEncontro==0)
     {
-        printf("El dato no existe");
+        printf("ERROR. El legajo ingresado no le pertenece a ningun empleado.");
     }
 
 }
@@ -244,7 +251,11 @@ int contarCarlos(eEmpleado lista[], int tam)
     return contadorCarlos;
 }
 
-int buscarLegajo(eEmpleado lista[], int tam, int legajo)
+int menuDeOpciones(char mensaje[])
 {
+    int opcion;
+    printf("%s", mensaje);
+    scanf("%d", &opcion);
 
+    return opcion;
 }

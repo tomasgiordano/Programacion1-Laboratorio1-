@@ -5,18 +5,13 @@
 #define T 10
 #define S 4
 
-int menuDeOpciones(char[]);
-
 /*
-Informes:
-
-1- EL/LOS Empleados con mayor sueldo.
-2- Cantidad de empleados que se llamen carlos y ganen mas de 20000
+    b. Por cada sector, todos los empleados que en el trabajan.
+    c. El total de sueldos por sector.
+    d. El sector con mas empleados.
 */
-
 int main()
 {
-    //int indice;
     int opcion;
 
     eEmpleado lista[T];
@@ -28,6 +23,7 @@ int main()
 
     do
     {
+        printf("\n---MENU DE CONTROL DE EMPLEADOS---\n\n");
         opcion = menuDeOpciones("1.Crear un empleado.\n2.Dar de baja por legajo.\n3.Modificar por legajo.\n4.Mostrar empleados.\n5.Informar |1|\n10.Salir.\nElija una opcion: ");
         switch(opcion)
         {
@@ -44,26 +40,17 @@ int main()
                 mostrarListaEmpleados(lista, T, sectores, S);
                 break;
             case 5:
-                printf("El");
+                printf("\tEl sueldo maximo de la empresa lo tienen los siguientes empleados:\n");
                 mostrarEmpleadosSueldoMaximo(lista,T,sectores,S);
-                printf("La cantidad de carlos que ganan mas de $20.000 es: %d\n", contarCarlos(lista,T));
+                printf("\tLa cantidad de carlos que ganan mas de $20.000 es: %d\n", contarCarlos(lista,T));
                 system("pause");
             break;
             default:
-                printf("ERROR. Ingrese una opcion valida!");
+                printf("\tERROR. Ingrese una opcion valida!");
             break;
         }
         system("cls");
     }while(opcion!=10);
 
     return 0;
-}
-
-int menuDeOpciones(char mensaje[])
-{
-    int opcion;
-    printf("%s", mensaje);
-    scanf("%d", &opcion);
-
-    return opcion;
 }

@@ -35,6 +35,14 @@ typedef struct
 
 } eEmpleado;
 
+typedef struct
+{
+    int idSector;
+    int empleado;
+
+}eSectorEmpleado;
+
+int menuDeOpciones(char[]);
 void mostrarEmpleado(eEmpleado, eSector[], int);
 void cargarEmpleado(eEmpleado[], int,eSector[],int);
 void mostrarListaEmpleados(eEmpleado[], int, eSector[], int);
