@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
 1558352479 source:c:\users\alumno\desktop\tomasgiordano\programacion1-laboratorio1-\clase 16\punteros.c
 
-1558355756 source:c:\users\alumno\desktop\tomasgiordano\programacion1-laboratorio1-\clase 16\main.c
+1558361885 source:c:\users\alumno\desktop\tomasgiordano\programacion1-laboratorio1-\clase 16\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<ctype.h>
 
