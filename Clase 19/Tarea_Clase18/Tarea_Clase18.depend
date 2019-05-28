@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1559005939 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\clase 19\tarea_clase18\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"employee.h"
+
+1559004108 c:\users\pc\desktop\c\programacion1-laboratorio1-\clase 19\tarea_clase18\employee.h
+
+1559005893 source:c:\users\pc\desktop\c\programacion1-laboratorio1-\clase 19\tarea_clase18\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"employee.h"
+

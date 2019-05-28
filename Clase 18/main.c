@@ -3,23 +3,23 @@
 
 int main()
 {
-    /*                      //ESCRITURA DE TEXTO//
-
+                         //ESCRITURA DE TEXTO//
+/*
     FILE* miArchivo;
     char nombre[20]={"Tomas"};
 
-    miArchivo=fopen("C:\\Users\\alumno\\Desktop\\Programacion1-Laboratorio1-\\Clase 17\\Lista_De_Nombres.txt","w");
+    miArchivo=fopen("Lista_De_Nombres.txt","w");
     fprintf(miArchivo,"Nombre: %s",nombre);
     fclose(miArchivo);
+*/
 
-    */
 
-    /*                      //LECTURA DE TEXTO//
-
+                      //LECTURA DE TEXTO//
+/*
     FILE* miArchivo;
     char nombre[20];
 
-    miArchivo=fopen("C:\\Users\\alumno\\Desktop\\Programacion1-Laboratorio1-\\Clase 18\\Lista_De_Nombres.txt","r");
+    miArchivo=fopen("Lista_De_Nombres.txt","r");
 
     while(!feof(miArchivo))
     {
@@ -28,24 +28,24 @@ int main()
     }
     fclose(miArchivo);
 
-    */
+*/
 
 
     /******************************************************************************************************************/
 
 
-    /*                  //ESCRITURA BINARIO//
-
+                      //ESCRITURA BINARIO//
+/*
     FILE* miArchivo;
     int x=4;
     miArchivo=fopen("datos.bin","wb");
     fwrite(&x,sizeof(int),1,miArchivo);
     fclose(miArchivo);
-    */
 
+*/
                         //LECTURA BINARIO//
 
-    /*
+/*
     FILE* miArchivo;
     int* x;
 
@@ -55,9 +55,13 @@ int main()
     fclose(miArchivo);
 
     printf("%d",*x);
-    */
 
+*/
     /******************************************************************************************************************/
+
+                                                    /**  TAREA  */
+
+                /**  ESTRUCTURA eEmpleado que guarde un empleado en un txt y en un bin y lea en txt y en bin*/
 
     return 0;
 }

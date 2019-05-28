@@ -1,0 +1,4 @@
+EMPLEADO:
+Id: -954405757.
+Nombre: $.
+Salario: 0.000000.
