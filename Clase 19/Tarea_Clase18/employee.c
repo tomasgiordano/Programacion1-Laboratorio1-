@@ -13,6 +13,7 @@ int addEmployee(eEmployee* pEmployee,int id,char name[20], float salary)
         set_id(pEmployee,id);
         set_name(pEmployee,name);
         set_salary(pEmployee,salary);
+        printf("1");
     }
     return validation;
 }

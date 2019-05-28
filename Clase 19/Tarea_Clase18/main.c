@@ -11,7 +11,6 @@ int main()
     char name[20];
     float salary;
     int validationAdd;
-    char empleado[50];
 
     eEmployee* pEmployee;
 
@@ -30,10 +29,12 @@ int main()
     if(validationAdd==1)
     {
         printf("\nEmpleado creado con exito!\n\n");
+        printf("EMPLEADO:\nId: %d.\nNombre: %s.\nSalario: %f.",pEmployee->id,pEmployee->name,pEmployee->salary);
     }
     else
     {
         printf("\nNo se pudo guardar el empleado.\n");
+
 
     }
 
@@ -47,7 +48,7 @@ int main()
     printf("\n\nLECTURA ARCHIVO TXT\n\n");
     while(feof(archivoTXT))
     {
-        fgets(empleado,50,archivoTXT);
+        fgets(pEmployee->id,10,archivoTXT);
         printf("%s",empleado);
     }
     system("pause");
